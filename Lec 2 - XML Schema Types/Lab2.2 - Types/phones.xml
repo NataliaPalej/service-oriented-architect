@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<phones	xmlns="http://www.phones.com"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.phones.com phonesComplexTypes.xsd">
+    <phone>
+        <type>Pre-pay</type>
+        <freeCallCredit>20</freeCallCredit>
+        <currency>Euro</currency>
+        <number>085-123456</number>
+        <provider>Meteor</provider>
+        <sold>
+            <profit>yes</profit>
+        </sold>
+        <maker>
+            <name>Nokia</name>
+            <location>Europe</location>
+        </maker>
+    </phone>
+    <phone>
+        <type>Bill-pay</type>
+        <freeCallCredit>20</freeCallCredit>
+        <currency>USD</currency>
+        <number>086-656544</number>
+        <provider>O2</provider>
+        <sold>
+            <profit>yes</profit>
+        </sold>
+        <maker>
+            <name>Apple</name>
+            <location>North America</location>
+        </maker>
+    </phone>
+</phones>

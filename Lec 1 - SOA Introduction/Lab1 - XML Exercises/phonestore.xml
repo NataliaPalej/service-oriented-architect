@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phonestore xmlns="http://www.phonestore.org"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.phonestore.org phonestore.xsd">
+	<phone>
+		<make>Samsung</make>
+		<model>S6</model>
+		<specs>
+			<memory>2GB</memory>
+			<os>Android</os>
+		</specs>
+		<price>500</price>
+	</phone>
+	<phone>
+		<make>Apple</make>
+		<model>i6</model>
+		<specs>
+			<memory>2GB</memory>
+			<os>Apple OS</os>
+		</specs>
+		<price>600</price>
+	</phone>
+</phonestore>

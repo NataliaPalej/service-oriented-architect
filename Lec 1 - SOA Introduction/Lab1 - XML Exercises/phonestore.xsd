@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.phonestore.org"
+            xmlns="http://www.phonestore.org"
+            elementFormDefault="qualified">
+
+    <xsd:element name="phonestore">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="phone" minOccurs="1" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="make" type="xsd:string"/>
+                            <xsd:element name="model" type="xsd:string"/>   
+                            <xsd:element name="specs" minOccurs="1" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="memory" type="xsd:string"/>
+                                        <xsd:element name="os" type="xsd:string"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="price" minOccurs="1" maxOccurs="unbounded" type="xsd:double"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

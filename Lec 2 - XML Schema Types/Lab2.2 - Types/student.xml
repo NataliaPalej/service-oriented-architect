@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<student xmlns="http://www.student.com"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.student.com studentComplexTypes.xsd">
+    <personal>        
+        <name>Joe Bloggs</name>
+        <dob>2000-01-22</dob>
+        <time>10:12:03</time>
+        <gender>Male</gender>
+        <weight>8.7</weight>
+        <phoneNo>087-1234567</phoneNo>
+    </personal>
+    <college name="AIT" studentID="A012345">
+        <course name="MSc in S/W Eng">
+            <semester>1</semester>
+            <classSize>7</classSize>
+            <favouriteSubject>SOA</favouriteSubject>
+        </course>
+    </college>
+</student>

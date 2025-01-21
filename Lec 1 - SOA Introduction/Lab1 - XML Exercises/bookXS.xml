@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<bookstore xmlns="http://www.books.org"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.books.org BookStore.xsd">
+    <book>
+        <title>Title 1</title>
+        <chapter>
+            <number>1</number>
+            <title>Title 1 a</title>
+        </chapter>
+        <price>15.99</price>
+    </book>
+
+    <book>
+        <title>Title 2</title>
+        <chapter>
+            <number>1</number>
+            <title>Title 2 a</title>
+        </chapter>
+        <price>20.99</price>
+    </book>
+</bookstore>

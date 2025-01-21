@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<horses	xmlns="http://www.horses.com"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.horses.com horsesComplexTypes.xsd">
+    
+    <horse trainer="Ginger McCain">
+        <name>Red Rum</name>
+        <dob>2010-01-22</dob>
+        <gender>Male</gender>
+        <favRace>The Grand National</favRace>
+    </horse>
+</horses>
