@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.showroom.org"
+            xmlns="http://www.showroom.org"
+            elementFormDefault="qualified">
+
+    <xsd:element name="showroom">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="car" minOccurs="1" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="make" type="xsd:string"/>
+                            <xsd:element name="model" type="xsd:string"/>   
+                            <xsd:element name="year" type="xsd:integer"/>
+                            <xsd:element name="colour" type="xsd:string"/>
+                            <xsd:element name="transmission" minOccurs="1" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="numGears" type="xsd:integer"/>
+                                        <xsd:element name="type" type="xsd:string"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="engine" minOccurs="1" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="size" type="xsd:double"/>
+                                        <xsd:element name="fuel" type="xsd:string"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="miles" minOccurs="1" maxOccurs="unbounded" type="xsd:integer"/>
+                            <xsd:element name="price" minOccurs="1" maxOccurs="unbounded" type="xsd:integer"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

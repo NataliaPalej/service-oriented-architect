@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<phones	xmlns="http://www.phones.com"
+<phones	xmlns="http://www.phones.org"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.phones.com phonesComplexTypes.xsd">
+        xsi:schemaLocation="http://www.phones.org phonesComplexTypes.xsd">
     <phone>
         <type>Pre-pay</type>
         <freeCallCredit>20</freeCallCredit>
         <currency>Euro</currency>
         <number>085-123456</number>
-        <provider>Meteor</provider>
+        <provider>Three</provider>
         <sold>
             <profit>yes</profit>
         </sold>
@@ -21,7 +21,7 @@
         <freeCallCredit>20</freeCallCredit>
         <currency>USD</currency>
         <number>086-656544</number>
-        <provider>O2</provider>
+        <provider>Vodafone</provider>
         <sold>
             <profit>yes</profit>
         </sold>

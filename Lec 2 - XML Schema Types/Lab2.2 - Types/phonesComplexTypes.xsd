@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.phones.org"
+            xmlns="http://www.phones.org"
+            elementFormDefault="qualified">
+
+<!--     <xsd:element name="phones">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="phone" minOccurs="1" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="type" type="xsd:string"/>
+                            <xsd:element name="freeCallCredit" type="xsd:integer"/>
+                            <xsd:element name="currency" type="xsd:integer"/>
+                            <xsd:element name="number" type="xsd:integer"/>
+                            <xsd:element name="provider" type="xsd:integer"/>
+                            <xsd:element name="sold">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="profit" type="xsd:string"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="maker">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="name" type="xsd:string"/>
+                                        <xsd:element name="location" type="xsd:string"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema> -->
+
+    <xsd:simpleType name="phoneType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Pre-pay"/>
+            <xsd:enumeration value="Bill-pay"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="providerType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Three"/>
+            <xsd:enumeration value="GoMo"/>
+            <xsd:enumeration value="Vodafone"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="currencyType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="USD"/>
+            <xsd:enumeration value="Euro"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="numberPattern">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="08[0-9]-[0-9]{6}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="locationType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Europe"/>
+            <xsd:enumeration value="North America"/>
+            <xsd:enumeration value="South America"/>
+            <xsd:enumeration value="Asia"/>
+            <xsd:enumeration value="Australia"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- Update elements with specific types -->
+    <xsd:element name="phones">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="phone" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="type" type="phoneType"/>
+                            <xsd:element name="freeCallCredit">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:integer">
+                                        <xsd:minInclusive value="10"/>
+                                        <xsd:maxInclusive value="30"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+                            <xsd:element name="currency" type="currencyType"/>
+                            <xsd:element name="number" type="numberPattern"/>
+                            <xsd:element name="provider" type="providerType"/>
+                            <xsd:element name="sold">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="profit" type="xsd:string"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="maker">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="name" type="xsd:string"/>
+                                        <xsd:element name="location" type="locationType"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

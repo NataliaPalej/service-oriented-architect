@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.student.com"
+            xmlns="http://www.student.com"
+            elementFormDefault="qualified">
+
+    <!-- Simple Types -->
+    <xsd:simpleType name="namePattern">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Z][a-z]+ [A-Z][a-z]+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="phonePattern">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{3}-\d{7}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="collegeNameType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="TUS"/>
+            <xsd:enumeration value="UCD"/>
+            <xsd:enumeration value="NUIG"/>
+            <xsd:enumeration value="TUD"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="studentIDType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="A0\d{5}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="favouriteSubjectType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="SOA"/>
+            <xsd:enumeration value="Data Science"/>
+            <xsd:enumeration value="Agile Build and Delivery"/>
+            <xsd:enumeration value="Software Design"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Root -->
+    <xsd:element name="student">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="personal">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="name" type="namePattern"/>
+                            <xsd:element name="dob" type="xsd:date"/>
+                            <xsd:element name="time" type="xsd:time"/>
+                            <xsd:element name="gender">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:enumeration value="Male"/>
+                                        <xsd:enumeration value="Female"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+                            <xsd:element name="weight" type="xsd:double"/>
+                            <xsd:element name="phoneNo" type="phonePattern"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="college">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="course">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="semester">
+                                            <xsd:simpleType>
+                                                <xsd:restriction base="xsd:integer">
+                                                    <xsd:minInclusive value="1"/>
+                                                    <xsd:maxInclusive value="2"/>
+                                                </xsd:restriction>
+                                            </xsd:simpleType>
+                                        </xsd:element>
+                                        <xsd:element name="classSize">
+                                            <xsd:simpleType>
+                                                <xsd:restriction base="xsd:integer">
+                                                    <xsd:minInclusive value="2"/>
+                                                    <xsd:maxInclusive value="30"/>
+                                                </xsd:restriction>
+                                            </xsd:simpleType>
+                                        </xsd:element>
+                                        <xsd:element name="favouriteSubject" type="favouriteSubjectType"/>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="name" type="xsd:string" use="required"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                        <xsd:attribute name="name" type="collegeNameType" use="required"/>
+                        <xsd:attribute name="studentID" type="studentIDType" use="required"/>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

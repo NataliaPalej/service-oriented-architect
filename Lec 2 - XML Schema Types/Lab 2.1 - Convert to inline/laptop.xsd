@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.laptop.org"
+            xmlns="http://www.laptop.org"
+            elementFormDefault="qualified">
+
+    <xsd:element name="laptop">
+        <xsd:complexType>
+            <xsd:sequence>
+            
+                <xsd:element name="manufacturer" minOccurs="1" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="name" type="xsd:string"/>
+                            <xsd:element name="country" type="xsd:string"/>   
+                            <xsd:element name="continent" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+
+                <xsd:element name="model" type="xsd:string"/>
+                <xsd:element name="memory" type="xsd:string"/>
+                <xsd:element name="disk" type="xsd:string"/>
+                <xsd:element name="screen" type="xsd:string"/>
+                <xsd:element name="accessories" minOccurs="0" maxOccurs="unbounded" type="xsd:string"/>
+
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
