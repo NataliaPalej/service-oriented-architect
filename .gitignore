@@ -1,5 +1,6 @@
 *.xml.git
 
+SOA4-project/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
